@@ -21,6 +21,7 @@ apt-get install -y --no-install-recommends \
   git \
   build-essential \
   pkg-config \
+  libcap-dev \
   zlib1g-dev \
   libnetfilter-queue-dev \
   libnfnetlink-dev \
