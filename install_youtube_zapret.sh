@@ -177,15 +177,6 @@ RestartSec=5
 WantedBy=multi-user.target
 EOF
 
-# Stop zapret2 if this server has it, then remove any leftover table.
-if systemctl cat zapret2.service >/dev/null 2>&1; then
-  systemctl disable --now zapret2.service
-fi
-
-if nft list table inet zapret2 >/dev/null 2>&1; then
-  nft delete table inet zapret2
-fi
-
 systemctl daemon-reload
 systemctl enable zapret.service
 systemctl restart zapret.service
